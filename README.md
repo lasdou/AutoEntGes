@@ -22,4 +22,8 @@ Pour l'installer sur un serveur WEB, télécharger les sources et exécuter la l
 
 `composer install`
 
+puis 
+
+`php bin/console doctrine:migrations:migrate`
+
 suivez ce lien Si vous n'avez pas encore composer : https://getcomposer.org/download/
