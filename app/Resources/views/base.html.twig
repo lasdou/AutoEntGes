@@ -11,3 +11,48 @@
         {% block javascripts %}{% endblock %}
     </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Gestion auto-entreprise</title>
+    {% block stylesheets %}
+        {% stylesheets '@css_admin' %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
+{% include 'navbar.html.twig' %}
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        {% include 'breadcrumb.html.twig' %}
+        {% block body %}{% endblock %}
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    {% include 'modals.html.twig' %}
+    {% block javascripts %}
+        {% javascripts '@js_admin' filter='jsqueeze' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+</div>
+</body>
+
+</html>
