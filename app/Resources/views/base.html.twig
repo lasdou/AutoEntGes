@@ -1,19 +1,4 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
-
-
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -48,7 +33,7 @@
     </a>
     {% include 'modals.html.twig' %}
     {% block javascripts %}
-        {% javascripts '@js_admin' filter='jsqueeze' %}
+        {% javascripts '@js_admin' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
     {% endblock %}
