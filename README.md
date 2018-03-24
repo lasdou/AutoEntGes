@@ -27,3 +27,7 @@ puis
 `php bin/console doctrine:migrations:migrate`
 
 suivez ce lien Si vous n'avez pas encore composer : https://getcomposer.org/download/
+
+Pour créer un compte utilisateur "super admin" il faut exécuter la ligne de commande suivante :
+
+`php bin/console fos:user:create adminuser --super-admin`
