@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Devis list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date_creation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for devi in devis %}
+            <tr>
+                <td><a href="{{ path('devis_show', { 'id': devi.id }) }}">{{ devi.id }}</a></td>
+                <td>{% if devi.datecreation %}{{ devi.datecreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('devis_show', { 'id': devi.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('devis_edit', { 'id': devi.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('devis_new') }}">Create a new devi</a>
+        </li>
+    </ul>
+{% endblock %}
