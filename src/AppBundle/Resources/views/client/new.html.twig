@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ville creation</h1>
-
+    <h1>Client creation</h1>
     {% form_theme form 'bootstrap_4_layout.html.twig' %}
     {{ form_start(form) }}
         {{ form_widget(form) }}
@@ -11,7 +10,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('ville_index') }}">Retour à la liste</a>
+            <a href="{{ path('client_index') }}">Retour à la liste</a>
         </li>
     </ul>
 {% endblock %}

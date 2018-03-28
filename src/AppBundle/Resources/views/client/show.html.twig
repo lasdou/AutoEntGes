@@ -34,7 +34,15 @@
 
     <ul>
         <li>
-            <a href="{{ path('client_index') }}">Back to the list</a>
+            <a href="{{ path('client_index') }}">Retour à la liste</a>
+        </li>
+        <li>
+            <a href="{{ path('client_edit', { 'id': client.id }) }}">Mettre à jour</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-danger" value="Supprimer">
+            {{ form_end(delete_form) }}
         </li>
     </ul>
 {% endblock %}

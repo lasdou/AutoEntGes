@@ -1,31 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Pay</h1>
+    <h1>Pays {{ pays.nom }}</h1>
 
     <table>
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ pay.id }}</td>
+                <td>{{ pays.id }}</td>
             </tr>
             <tr>
                 <th>Nom</th>
-                <td>{{ pay.nom }}</td>
+                <td>{{ pays.nom }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('pays_index') }}">Back to the list</a>
+            <a href="{{ path('pays_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('pays_edit', { 'id': pay.id }) }}">Edit</a>
+            <a href="{{ path('pays_edit', { 'id': pays.id }) }}">Mettre à jour</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" class="btn btn-danger" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

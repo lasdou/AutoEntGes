@@ -2,19 +2,19 @@
 
 {% block body %}
     <h1>Ville edit</h1>
-
+    {% form_theme edit_form 'bootstrap_4_layout.html.twig' %}
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input type="submit" class="btn btn-primary" value="Mettre à jour" />
     {{ form_end(edit_form) }}
 
     <ul>
         <li>
-            <a href="{{ path('ville_index') }}">Back to the list</a>
+            <a href="{{ path('ville_index') }}">Retour à la liste</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" class="btn btn-danger" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>
