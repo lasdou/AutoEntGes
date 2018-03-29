@@ -21,10 +21,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('ville_show', { 'id': ville.id }) }}">show</a>
+                            <a href="{{ path('ville_show', { 'id': ville.id }) }}" class="btn btn-secondary"><i class="fas fa-search"></i></a>
                         </li>
                         <li>
-                            <a href="{{ path('ville_edit', { 'id': ville.id }) }}">edit</a>
+                            <a href="{{ path('ville_edit', { 'id': ville.id }) }}" class="btn btn-primary"><i class="fas fa-pencil"></i></a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +35,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('ville_new') }}">Créer un nouveauville</a>
+            <a href="{{ path('ville_new') }}" class="btn btn-success"><i class="fas fa-plus"></i>Créer un nouveau ville</a>
         </li>
     </ul>
 {% endblock %}

@@ -208,4 +208,24 @@ class Client
     {
         return $this->adresse;
     }
+
+    /**
+     * @param mixed $civilite
+     *
+     * @return Client
+     */
+    public function setCivilite($civilite)
+    {
+        $this->civilite = $civilite;
+
+        return $this;
+}
+
+    /**
+     * @return mixed
+     */
+    public function getCivilite()
+    {
+        return $this->civilite;
+    }
 }
