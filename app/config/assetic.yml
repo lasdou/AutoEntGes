@@ -9,18 +9,18 @@ assetic:
             inputs:
                 # jQuery
                 - "%kernel.root_dir%/../vendor/components/jquery/jquery.min.js"
+                # Nos JS à nous
+                - "@AppBundle/Resources/javascript/*"
                 # Bootstrap
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"
                 # Thème d'admin et ses dépendances
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/jquery-easing/jquery.easing.min.js"
-                - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/chart.js/Chart.min.js"
+                #- "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/chart.js/Chart.min.js"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/datatables/jquery.dataTables.js"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/datatables/dataTables.bootstrap4.js"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin.min.js"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin-datatables.min.js"
-                - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin-charts.min.js"
-                # Nos JS à nous
-                - "@AppBundle/Resources/javascript/*"
+                #- "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin-charts.min.js"
         css_admin:
             inputs:
                 # Bootstrap

@@ -40,6 +40,9 @@
             <a href="{{ path('client_edit', { 'id': client.id }) }}">Mettre à jour</a>
         </li>
         <li>
+            <a href="{{ path('adresse_add', { 'id': client.id }) }}" data-remote="true" data-toggle="modal" data-target="#remoteModal">Ajouter une adresse</a>
+        </li>
+        <li>
             {{ form_start(delete_form) }}
                 <input type="submit" class="btn btn-danger" value="Supprimer">
             {{ form_end(delete_form) }}
