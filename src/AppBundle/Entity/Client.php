@@ -18,6 +18,12 @@ class Client
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Civilite")
+     * @ORM\JoinColumn(name="civilite_id", referencedColumnName="id")
+     */
+    private $civilite;
+
+    /**
      * @ORM\Column(type="string", length=100)
      */
     private $nom;
@@ -33,18 +39,18 @@ class Client
     private $raison_sociale = null;
 
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=15, nullable=true)
      */
     private $telephone;
 
     /**
-     * @ORM\Column(type="string", length=200)
+     * @ORM\Column(type="string", length=200, nullable=true)
      */
     private $email;
 
     /**
      * @ORM\ManyToOne(targetEntity="Adresse")
-     * @ORM\JoinColumn(name="adresse_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="adresse_id", referencedColumnName="id", nullable=true)
      */
     private $adresse;
 
@@ -201,5 +207,25 @@ class Client
     public function getAdresse()
     {
         return $this->adresse;
+    }
+
+    /**
+     * @param mixed $civilite
+     *
+     * @return Client
+     */
+    public function setCivilite($civilite)
+    {
+        $this->civilite = $civilite;
+
+        return $this;
+}
+
+    /**
+     * @return mixed
+     */
+    public function getCivilite()
+    {
+        return $this->civilite;
     }
 }

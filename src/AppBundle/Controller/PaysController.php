@@ -39,20 +39,20 @@ class PaysController extends Controller
      */
     public function newAction(Request $request)
     {
-        $pay = new Pay();
-        $form = $this->createForm('AppBundle\Form\PaysType', $pay);
+        $pays = new Pays();
+        $form = $this->createForm('AppBundle\Form\PaysType', $pays);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($pay);
+            $em->persist($pays);
             $em->flush();
 
-            return $this->redirectToRoute('pays_show', array('id' => $pay->getId()));
+            return $this->redirectToRoute('pays_show', array('id' => $pays->getId()));
         }
 
         return $this->render('AppBundle:pays:new.html.twig', array(
-            'pay' => $pay,
+            'pays' => $pays,
             'form' => $form->createView(),
         ));
     }
@@ -63,12 +63,12 @@ class PaysController extends Controller
      * @Route("/{id}", name="pays_show")
      * @Method("GET")
      */
-    public function showAction(Pays $pay)
+    public function showAction(Pays $pays)
     {
-        $deleteForm = $this->createDeleteForm($pay);
+        $deleteForm = $this->createDeleteForm($pays);
 
         return $this->render('AppBundle:pays:show.html.twig', array(
-            'pay' => $pay,
+            'pays' => $pays,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -79,20 +79,20 @@ class PaysController extends Controller
      * @Route("/{id}/edit", name="pays_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Pays $pay)
+    public function editAction(Request $request, Pays $pays)
     {
-        $deleteForm = $this->createDeleteForm($pay);
-        $editForm = $this->createForm('AppBundle\Form\PaysType', $pay);
+        $deleteForm = $this->createDeleteForm($pays);
+        $editForm = $this->createForm('AppBundle\Form\PaysType', $pays);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('pays_edit', array('id' => $pay->getId()));
+            return $this->redirectToRoute('pays_edit', array('id' => $pays->getId()));
         }
 
         return $this->render('AppBundle:pays:edit.html.twig', array(
-            'pay' => $pay,
+            'pays' => $pays,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -104,14 +104,14 @@ class PaysController extends Controller
      * @Route("/{id}", name="pays_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, Pays $pay)
+    public function deleteAction(Request $request, Pays $pays)
     {
-        $form = $this->createDeleteForm($pay);
+        $form = $this->createDeleteForm($pays);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($pay);
+            $em->remove($pays);
             $em->flush();
         }
 
@@ -125,10 +125,10 @@ class PaysController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Pays $pay)
+    private function createDeleteForm(Pays $pays)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('pays_delete', array('id' => $pay->getId())))
+            ->setAction($this->generateUrl('pays_delete', array('id' => $pays->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

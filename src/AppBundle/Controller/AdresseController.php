@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Adresse;
+use AppBundle\Entity\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -38,6 +39,32 @@ class AdresseController extends Controller
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
+    {
+        $adresse = new Adresse();
+        $form = $this->createForm('AppBundle\Form\AdresseType', $adresse);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($adresse);
+            $em->flush();
+
+            return $this->redirectToRoute('adresse_show', array('id' => $adresse->getId()));
+        }
+
+        return $this->render('AppBundle:adresse:new.html.twig', array(
+            'adresse' => $adresse,
+            'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * Creates a new adresse entity.
+     *
+     * @Route("/add/{id}", name="adresse_add")
+     * @Method({"GET", "POST"})
+     */
+    public function addAction(Client $client)
     {
         $adresse = new Adresse();
         $form = $this->createForm('AppBundle\Form\AdresseType', $adresse);

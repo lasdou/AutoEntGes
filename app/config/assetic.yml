@@ -9,41 +9,73 @@ assetic:
             inputs:
                 # jQuery
                 - "%kernel.root_dir%/../vendor/components/jquery/jquery.min.js"
+                # Nos JS à nous
+                - "@AppBundle/Resources/javascript/*"
                 # Bootstrap
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"
                 # Thème d'admin et ses dépendances
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/jquery-easing/jquery.easing.min.js"
-                - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/chart.js/Chart.min.js"
+                #- "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/chart.js/Chart.min.js"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/datatables/jquery.dataTables.js"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/datatables/dataTables.bootstrap4.js"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin.min.js"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin-datatables.min.js"
-                - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin-charts.min.js"
-                # Nos JS à nous
-                - "@AppBundle/Resources/javascript/*"
+                #- "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin-charts.min.js"
         css_admin:
             inputs:
                 # Bootstrap
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css"
                 # FontAwesome
-                - "%kernel.root_dir%/../vendor/fortawesome/font-awesome/css/font-awesome.min.css"
+                - "%kernel.root_dir%/../vendor/components/font-awesome/css/fontawesome-all.min.css"
                 # Thème d'admin et ses dépendances
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/datatables/dataTables.bootstrap4.css"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/css/sb-admin.css"
                 # Nos CSS à nous
                 - "@AppBundle/Resources/css/*"
-        fonts_fontawesome_eot:
-            input: "%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/fontawesome-webfont.eot"
-            output: "fonts/fontawesome-webfont.eot"
-        fonts_fontawesome_svg:
-            input: "%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/fontawesome-webfont.svg"
-            output: "fonts/fontawesome-webfont.svg"
-        fonts_fontawesome_ttf:
-            input: "%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/fontawesome-webfont.ttf"
-            output: "fonts/fontawesome-webfont.ttf"
-        fonts_fontawesome_woff:
-            input: "%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/fontawesome-webfont.woff"
-            output: "fonts/fontawesome-webfont.woff"
-        fonts_fontawesome_woff2:
-            input: "%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/fontawesome-webfont.woff2"
-            output: "fonts/fontawesome-webfont.woff2"
+        fonts_fontawesome_solid_eot:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-solid-900.eot"
+            output: "webfonts/fa-solid-900.eot"
+        fonts_fontawesome_solid_svg:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-solid-900.svg"
+            output: "webfonts/fa-solid-900.svg"
+        fonts_fontawesome_solid_ttf:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-solid-900.ttf"
+            output: "webfonts/fa-solid-900.ttf"
+        fonts_fontawesome_solid_woff:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-solid-900.woff"
+            output: "webfonts/fa-solid-900.woff"
+        fonts_fontawesome_solid_woff2:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-solid-900.woff2"
+            output: "webfonts/fa-solid-900.woff2"
+
+        fonts_fontawesome_regular_eot:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-regular-400.eot"
+            output: "webfonts/fa-regular-400.eot"
+        fonts_fontawesome_regular_svg:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-regular-400.svg"
+            output: "webfonts/fa-regular-400.svg"
+        fonts_fontawesome_regular_ttf:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-regular-400.ttf"
+            output: "webfonts/fa-regular-400.ttf"
+        fonts_fontawesome_regular_woff:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-regular-400.woff"
+            output: "webfonts/fa-regular-400.woff"
+        fonts_fontawesome_regular_woff2:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-regular-400.woff2"
+            output: "webfonts/fa-regular-400.woff2"
+
+        fonts_fontawesome_brands_eot:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-brands-400.eot"
+            output: "webfonts/fa-brands-400.eot"
+        fonts_fontawesome_brands_svg:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-brands-400.svg"
+            output: "webfonts/fa-brands-400.svg"
+        fonts_fontawesome_brands_ttf:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-brands-400.ttf"
+            output: "webfonts/fa-brands-400.ttf"
+        fonts_fontawesome_brands_woff:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-brands-400.woff"
+            output: "webfonts/fa-brands-400.woff"
+        fonts_fontawesome_brands_woff2:
+            input: "%kernel.root_dir%/../vendor/components/font-awesome/webfonts/fa-brands-400.woff2"
+            output: "webfonts/fa-brands-400.woff2"

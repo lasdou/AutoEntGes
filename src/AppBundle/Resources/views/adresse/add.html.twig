@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="remoteModalTitle"></h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+</div>
+<div class="modal-body">
+
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+        <input type="submit" class="btn btn-primary" value="Ajouter" />
+    {{ form_end(form) }}
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+    <a class="btn btn-primary" data-remote="{{ path('adresse_add', { 'id': client.id }) }}" data-toggle="modal" data-target="#remoteModal">Ajouter</a>
+</div>

@@ -34,14 +34,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('produitdevis_index') }}">Back to the list</a>
+            <a href="{{ path('produitdevis_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('produitdevis_edit', { 'id': produitDevi.id }) }}">Edit</a>
+            <a href="{{ path('produitdevis_edit', { 'id': produitDevi.id }) }}">Mettre à jour</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" class="btn btn-danger" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

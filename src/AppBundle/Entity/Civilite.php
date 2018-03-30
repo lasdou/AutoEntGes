@@ -10,11 +10,11 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @UniqueEntity(
  *     fields={"nom"},
  *     errorPath="nom",
- *     message="Ce pays existe déjà."
+ *     message="Cette civilité existe déjà."
  * )
- * @ORM\Table(name="pays")
+ * @ORM\Table(name="civilite")
  */
-class Pays
+class Civilite
 {
     /**
      * @ORM\Column(type="integer")
@@ -48,7 +48,7 @@ class Pays
      *
      * @param string $nom
      *
-     * @return Pays
+     * @return \AppBundle\Entity\Civilite
      */
     public function setNom($nom)
     {

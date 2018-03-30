@@ -19,10 +19,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('devis_show', { 'id': devi.id }) }}">show</a>
+                            <a href="{{ path('devis_show', { 'id': devi.id }) }}" class="btn btn-secondary"><i class="fas fa-search"></i></a>
                         </li>
                         <li>
-                            <a href="{{ path('devis_edit', { 'id': devi.id }) }}">edit</a>
+                            <a href="{{ path('devis_edit', { 'id': devi.id }) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                         </li>
                     </ul>
                 </td>
@@ -33,7 +33,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('devis_new') }}">Create a new devi</a>
+            <a href="{{ path('devis_new') }}" class="btn btn-success"><i class="fas fa-plus"> </i>Créer un nouveau devi</a>
         </li>
     </ul>
 {% endblock %}

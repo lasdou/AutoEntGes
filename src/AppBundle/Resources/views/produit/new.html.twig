@@ -3,14 +3,15 @@
 {% block body %}
     <h1>Produit creation</h1>
 
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" class="btn btn-primary" value="Créer" />
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('produit_index') }}">Back to the list</a>
+            <a href="{{ path('produit_index') }}">Retour à la liste</a>
         </li>
     </ul>
 {% endblock %}

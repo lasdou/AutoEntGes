@@ -29,11 +29,11 @@
     },
     "require": {
         "php": ">=5.5.9",
+        "components/font-awesome": "^5.0",
         "components/jquery": "^3.3",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-migrations-bundle": "^1.0",
         "doctrine/orm": "^2.5",
-        "fortawesome/font-awesome": "^4.7",
         "friendsofsymfony/user-bundle": "^2.1",
         "incenteev/composer-parameter-handler": "^2.0",
         "sensio/distribution-bundle": "^5.0.19",
@@ -66,8 +66,7 @@
             "php bin/console assetic:dump"
         ],
         "post-update-cmd": [
-            "@symfony-scripts",
-            "php bin/console assetic:dump"
+            "@symfony-scripts"
         ]
     },
     "config": {
