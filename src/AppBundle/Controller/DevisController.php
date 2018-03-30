@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Client;
 use AppBundle\Entity\Devis;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -34,25 +35,26 @@ class DevisController extends Controller
     /**
      * Creates a new devi entity.
      *
-     * @Route("/new", name="devis_new")
+     * @Route("/new/{id}", name="devis_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Client $client, Request $request)
     {
-        $devi = new Devi();
-        $form = $this->createForm('AppBundle\Form\DevisType', $devi);
+        $devis = new Devis();
+        $devis->setClient($client);
+        $form = $this->createForm('AppBundle\Form\DevisType', $devis);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($devi);
+            $em->persist($devis);
             $em->flush();
 
-            return $this->redirectToRoute('devis_show', array('id' => $devi->getId()));
+            return $this->redirectToRoute('devis_show', array('id' => $devis->getId()));
         }
 
         return $this->render('AppBundle:devis:new.html.twig', array(
-            'devi' => $devi,
+            'devi' => $devis,
             'form' => $form->createView(),
         ));
     }

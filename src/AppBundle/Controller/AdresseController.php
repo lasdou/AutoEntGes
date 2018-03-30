@@ -64,9 +64,10 @@ class AdresseController extends Controller
      * @Route("/add/{id}", name="adresse_add")
      * @Method({"GET", "POST"})
      */
-    public function addAction(Client $client)
+    public function addAction(Client $client, Request $request)
     {
         $adresse = new Adresse();
+        $adresse->setClient($client);
         $form = $this->createForm('AppBundle\Form\AdresseType', $adresse);
         $form->handleRequest($request);
 
@@ -75,10 +76,10 @@ class AdresseController extends Controller
             $em->persist($adresse);
             $em->flush();
 
-            return $this->redirectToRoute('adresse_show', array('id' => $adresse->getId()));
+            return $this->redirectToRoute('client_show', array('id' => $client->getId()));
         }
 
-        return $this->render('AppBundle:adresse:new.html.twig', array(
+        return $this->render('AppBundle:adresse:add.html.twig', array(
             'adresse' => $adresse,
             'form' => $form->createView(),
         ));

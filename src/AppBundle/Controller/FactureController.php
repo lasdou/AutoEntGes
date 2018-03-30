@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Client;
 use AppBundle\Entity\Facture;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -34,12 +35,13 @@ class FactureController extends Controller
     /**
      * Creates a new facture entity.
      *
-     * @Route("/new", name="facture_new")
+     * @Route("/new/{id}", name="facture_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Client $client, Request $request)
     {
         $facture = new Facture();
+        $facture->setClient($client);
         $form = $this->createForm('AppBundle\Form\FactureType', $facture);
         $form->handleRequest($request);
 
