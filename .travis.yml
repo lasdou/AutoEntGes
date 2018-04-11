@@ -38,7 +38,7 @@ install:
   - composer install
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - php bin/console doctrine:database:create --env=test
-  - php bin/console doctrine:migration:migrate --env=test
+  - php bin/console doctrine:migration:migrate --no-interaction --env=test
 
 # Run script
 script:
