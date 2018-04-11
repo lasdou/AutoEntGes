@@ -47,4 +47,4 @@ script:
 
 # After a build, send email notification with the build results
 notifications:
-  email: your_email
+  email: florian15@gmail.com
