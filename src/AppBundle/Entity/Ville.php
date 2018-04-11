@@ -34,6 +34,11 @@ class Ville
     private $pays;
 
 
+    public function __toString()
+    {
+        return $this->getNom().'('.$this->getCodePostal().') - '.$this->getPays();
+    }
+
     /**
      * Get id
      *

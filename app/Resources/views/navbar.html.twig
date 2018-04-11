@@ -12,6 +12,23 @@
                     <span class="nav-link-text">Accueil</span>
                 </a>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Menu Levels">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion" aria-expanded="true">
+                    <i class="fa fa-fw fa-cog"></i>
+                    <span class="nav-link-text">Paramétrage</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti" style="">
+                    <li>
+                        <a href="{{ path('pays_index') }}">Pays</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('ville_index') }}">Villes</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('civilite_index') }}">Civilités</a>
+                    </li>
+                </ul>
+            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
                 <a class="nav-link" href="{{ path('client_index') }}">
                     <i class="fas  fa-address-book"></i>
@@ -47,7 +64,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#LogoutModal">
-                    <i class="fas  fa-sign-out"></i>Déconnexion</a>
+                    <i class="fas fa-sign-out-alt"></i> Déconnexion</a>
             </li>
         </ul>
     </div>

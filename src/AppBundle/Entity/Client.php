@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,25 +19,9 @@ class Client
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Civilite")
-     * @ORM\JoinColumn(name="civilite_id", referencedColumnName="id")
-     */
-    private $civilite;
-
-    /**
      * @ORM\Column(type="string", length=100)
      */
     private $nom;
-
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
-    private $prenom;
-
-    /**
-     * @ORM\Column(type="string", length=100, nullable=true)
-     */
-    private $raison_sociale = null;
 
     /**
      * @ORM\Column(type="string", length=15, nullable=true)
@@ -49,11 +34,28 @@ class Client
     private $email;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Adresse")
-     * @ORM\JoinColumn(name="adresse_id", referencedColumnName="id", nullable=true)
+     * @ORM\OneToMany(targetEntity="Adresse", mappedBy="client")
      */
-    private $adresse;
+    private $adresses;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Devis", mappedBy="client")
+     */
+    private $devis;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Facture", mappedBy="client")
+     */
+    private $factures;
+
+    public function __construct() {
+        $this->adresses = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getNom();
+    }
 
     /**
      * Get id
@@ -87,54 +89,6 @@ class Client
     public function getNom()
     {
         return $this->nom;
-    }
-
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     *
-     * @return Client
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    /**
-     * Get prenom
-     *
-     * @return string
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
-
-    /**
-     * Set raisonSociale
-     *
-     * @param string $raisonSociale
-     *
-     * @return Client
-     */
-    public function setRaisonSociale($raisonSociale)
-    {
-        $this->raison_sociale = $raisonSociale;
-
-        return $this;
-    }
-
-    /**
-     * Get raisonSociale
-     *
-     * @return string
-     */
-    public function getRaisonSociale()
-    {
-        return $this->raison_sociale;
     }
 
     /**
@@ -185,47 +139,106 @@ class Client
         return $this->email;
     }
 
+
     /**
-     * Set adresse
+     * Add adress
      *
-     * @param \AppBundle\Entity\Adresse $adresse
+     * @param \AppBundle\Entity\Adresse $adress
      *
      * @return Client
      */
-    public function setAdresse(\AppBundle\Entity\Adresse $adresse = null)
+    public function addAdress(\AppBundle\Entity\Adresse $adress)
     {
-        $this->adresse = $adresse;
+        $this->adresses[] = $adress;
 
         return $this;
     }
 
     /**
-     * Get adresse
+     * Remove adress
      *
-     * @return \AppBundle\Entity\Adresse
+     * @param \AppBundle\Entity\Adresse $adress
      */
-    public function getAdresse()
+    public function removeAdress(\AppBundle\Entity\Adresse $adress)
     {
-        return $this->adresse;
+        $this->adresses->removeElement($adress);
     }
 
     /**
-     * @param mixed $civilite
+     * Get adresses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAdresses()
+    {
+        return $this->adresses;
+    }
+
+    /**
+     * Add devi
+     *
+     * @param \AppBundle\Entity\Devis $devi
      *
      * @return Client
      */
-    public function setCivilite($civilite)
+    public function addDevi(\AppBundle\Entity\Devis $devi)
     {
-        $this->civilite = $civilite;
+        $this->devis[] = $devi;
 
         return $this;
-}
+    }
 
     /**
-     * @return mixed
+     * Remove devi
+     *
+     * @param \AppBundle\Entity\Devis $devi
      */
-    public function getCivilite()
+    public function removeDevi(\AppBundle\Entity\Devis $devi)
     {
-        return $this->civilite;
+        $this->devis->removeElement($devi);
+    }
+
+    /**
+     * Get devis
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDevis()
+    {
+        return $this->devis;
+    }
+
+    /**
+     * Add facture
+     *
+     * @param \AppBundle\Entity\Facture $facture
+     *
+     * @return Client
+     */
+    public function addFacture(\AppBundle\Entity\Facture $facture)
+    {
+        $this->factures[] = $facture;
+
+        return $this;
+    }
+
+    /**
+     * Remove facture
+     *
+     * @param \AppBundle\Entity\Facture $facture
+     */
+    public function removeFacture(\AppBundle\Entity\Facture $facture)
+    {
+        $this->factures->removeElement($facture);
+    }
+
+    /**
+     * Get factures
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFactures()
+    {
+        return $this->factures;
     }
 }

@@ -34,6 +34,12 @@ class Facture
      */
     private $produitsFacture;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Client")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     */
+    private $client;
+
     public function __construct() {
         $this->produitsFacture = new ArrayCollection();
         $this->date_creation = new \DateTime();
@@ -130,5 +136,29 @@ class Facture
     public function getProduitsFacture()
     {
         return $this->produitsFacture;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \AppBundle\Entity\Client $client
+     *
+     * @return Facture
+     */
+    public function setClient(\AppBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \AppBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }

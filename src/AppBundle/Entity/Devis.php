@@ -30,6 +30,12 @@ class Devis
      */
     private $produitsDevis;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Client")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     */
+    private $client;
+
     public function __construct() {
         $this->produitsDevis = new ArrayCollection();
         $this->date_creation = new \DateTime();
@@ -102,5 +108,29 @@ class Devis
     public function getProduitsDevis()
     {
         return $this->produitsDevis;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \AppBundle\Entity\Client $client
+     *
+     * @return Devis
+     */
+    public function setClient(\AppBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \AppBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }
