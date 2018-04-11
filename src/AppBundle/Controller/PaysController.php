@@ -51,9 +51,12 @@ class PaysController extends Controller
             return $this->redirectToRoute('pays_show', array('id' => $pays->getId()));
         }
 
-        return $this->render('AppBundle:pays:new.html.twig', array(
-            'pays' => $pays,
+
+        return $this->render('form_popin.html.twig', array(
+            'title' => 'Ajouter un nouveau pays : ',
             'form' => $form->createView(),
+            'submit_label' => 'Créer',
+            'action_path' => $this->generateUrl('pays_new'),
         ));
     }
 
@@ -88,12 +91,14 @@ class PaysController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('pays_edit', array('id' => $pays->getId()));
+            return $this->redirectToRoute('pays_index');
         }
 
-        return $this->render('AppBundle:pays:edit.html.twig', array(
-            'pays' => $pays,
-            'edit_form' => $editForm->createView(),
+        return $this->render('form_popin.html.twig', array(
+            'title' => 'Modification du pays : '.$pays,
+            'form' => $editForm->createView(),
+            'submit_label' => 'modifier',
+            'action_path' => $this->generateUrl('pays_edit', ['id' => $pays->getId()]),
             'delete_form' => $deleteForm->createView(),
         ));
     }
