@@ -6,6 +6,10 @@
   convertWarningsToExceptions="true"
   stopOnFailure="true">
 
+    <php>
+        <server name="KERNEL_DIR" value="app/" />
+    </php>
+  
   <testsuites>
     <testsuite name="AutoEntGesTest">
       <directory>tests/AppBundle/*/</directory>
