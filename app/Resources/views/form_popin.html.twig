@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="remoteModalTitle">{{ title }}</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+</div>
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+    {{ form_start(form, {'action': action_path}) }}
+<div class="modal-body">
+    {{ form_widget(form) }}
+</div>
+<div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+    <input type="submit" class="btn btn-primary" value="{{ submit_label }}" />
+</div>
+{{ form_end(form) }}

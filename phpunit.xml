@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+  colors="false"
+  convertErrorsToExceptions="true"
+  convertNoticesToExceptions="true"
+  convertWarningsToExceptions="true"
+  stopOnFailure="true">
+
+    <php>
+        <server name="KERNEL_DIR" value="app/" />
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
+    </php>
+  
+  <testsuites>
+    <testsuite name="AutoEntGesTest">
+      <directory>tests/AppBundle/*/</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

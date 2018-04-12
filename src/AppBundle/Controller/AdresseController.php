@@ -76,7 +76,9 @@ class AdresseController extends Controller
             $em->persist($adresse);
             $em->flush();
 
-            return $this->redirectToRoute('client_show', array('id' => $client->getId()));
+            return $this->render('AppBundle:messages:popin_success.html.twig', array(
+                'message' => 'Adresse ajoutée avec succès',
+            ));
         }
 
         return $this->render('AppBundle:adresse:add.html.twig', array(

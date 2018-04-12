@@ -1,6 +1,8 @@
 AutoEntGes
 ========================
 
+[![Build Status](https://travis-ci.org/lasdou/AutoEntGes.svg?branch=develop)](https://travis-ci.org/lasdou/AutoEntGes)
+
 qu'est ce que c'est ?
 --------------
 
