@@ -42,8 +42,8 @@ install:
 
 # Run script
 script:
-  - phpunit
-# - ./vendor/bin/phpunit -c /home/travis/build/lasdou/AutoEntGes/phpunit.xml --testsuite AutoEntGesTestSuite
+#  - phpunit
+ - ./vendor/bin/phpunit -c /home/travis/build/lasdou/AutoEntGes/phpunit.xml --testsuite AutoEntGesTest
 
 # After a build, send email notification with the build results
 notifications:
