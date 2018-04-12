@@ -1,7 +1,7 @@
 AutoEntGes
 ========================
 
-[![Build Status](https://travis-ci.org/uxsolutions/bootstrap-datepicker.svg?branch=master)](https://travis-ci.org/uxsolutions/bootstrap-datepicker)
+[![Build Status](https://travis-ci.org/lasdou/AutoEntGes.svg?branch=master)](https://travis-ci.org/lasdou/AutoEntGes)
 
 qu'est ce que c'est ?
 --------------
