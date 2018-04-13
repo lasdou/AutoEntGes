@@ -31,8 +31,8 @@ class DefaultControllerTest extends ParentController
         $crawler = $this->client->request('GET', '/');
 
         $form = $crawler->selectButton('Login')->form(array(
-            '_username'  => 'adminuser',
-            '_password'  => 'Angelina44',
+            '_username'  => 'admin',
+            '_password'  => 'password',
         ));
 
         $crawler = $this->client->submit($form);
@@ -46,7 +46,7 @@ class DefaultControllerTest extends ParentController
         $crawler = $this->client->request('GET', '/');
 
         $form = $crawler->selectButton('Login')->form(array(
-            '_username'  => 'adminuser',
+            '_username'  => 'admin',
             '_password'  => 'wrong_password',
         ));
 
