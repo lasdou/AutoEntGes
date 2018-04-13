@@ -12,8 +12,11 @@
     </php>
   
   <testsuites>
-    <testsuite name="AutoEntGesTest">
-      <directory>tests/AppBundle/*/</directory>
-    </testsuite>
+      <testsuite name="AutoEntGesTestFunctionnal">
+          <directory>tests/Functionnal/AppBundle/*/</directory>
+      </testsuite>
+      <testsuite name="AutoEntGesTestUnit">
+          <directory>tests/Unit/AppBundle/*/</directory>
+      </testsuite>
   </testsuites>
 </phpunit>

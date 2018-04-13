@@ -16,12 +16,12 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="actionList">
         <li>
             <a href="{{ path('pays_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('pays_edit', { 'id': pays.id }) }}">Mettre à jour</a>
+            <a href="{{ path('pays_edit', { 'id': pays.id }) }}" data-remote="true" data-toggle="modal" data-target="#remoteModal" class="btn btn-primary"><i class="fas fa-edit"></i> Mettre à jour</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

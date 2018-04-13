@@ -37,6 +37,13 @@ class Version01_00_00 extends AbstractMigration
         $this->addSql('ALTER TABLE produit_devis ADD CONSTRAINT FK_BBBBA2BF41DEFADA FOREIGN KEY (devis_id) REFERENCES devis (id)');
         $this->addSql('ALTER TABLE produit_facture ADD CONSTRAINT FK_387DEF697F2DEE08 FOREIGN KEY (facture_id) REFERENCES facture (id)');
         $this->addSql('ALTER TABLE ville ADD CONSTRAINT FK_43C3D9C3A6E44244 FOREIGN KEY (pays_id) REFERENCES pays (id)');
+
+        //adding user admin:password
+        $this->addSql('INSERT INTO `fos_utilisateur` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `confirmation_token`, `password_requested_at`, `roles`) VALUES
+    (2, \'admin\', \'admin\', \'test@test.net\', \'test@test.net\', 1, NULL, \'$2y$13$N2mquQrtGWex4Fx4VEkub.C3FeUYPsX7S.pSgTg/S30efKe/CpZnO\', NULL, NULL, NULL, \'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}\');');
+
+
+
     }
 
     /**

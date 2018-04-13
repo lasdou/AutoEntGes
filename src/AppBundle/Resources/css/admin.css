@@ -1,0 +1,8 @@
+ul.actionList {
+    list-style-type: none;
+}
+
+ul.actionList li {
+    float: left;
+    margin-left: 15px;
+}
