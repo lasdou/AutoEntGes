@@ -51,7 +51,6 @@ class PaysController extends Controller
             return $this->redirectToRoute('pays_show', array('id' => $pays->getId()));
         }
 
-
         return $this->render('form_popin.html.twig', array(
             'title' => 'Ajouter un nouveau pays : ',
             'form' => $form->createView(),

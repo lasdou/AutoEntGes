@@ -17,7 +17,7 @@
                 <td><a href="{{ path('pays_show', { 'id': pay.id }) }}">{{ pay.id }}</a></td>
                 <td>{{ pay.nom }}</td>
                 <td>
-                    <ul>
+                    <ul id="paysActions{{ pay.nom|title | replace({' ': ''})  }}" class="actionList">
                         <li>
                             <a href="{{ path('pays_show', { 'id': pay.id }) }}" class="btn btn-secondary"><i class="fas fa-eye"></i> Afficher</a>
                         </li>
