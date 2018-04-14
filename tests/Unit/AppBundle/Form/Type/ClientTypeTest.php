@@ -10,7 +10,7 @@ use AppBundle\Form\ClientType;
 use AppBundle\Form\PaysType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
-class CiviliteTypeTest extends TypeTestCase
+class ClientTypeTest extends TypeTestCase
 {
     public function testSubmitValidData()
     {
