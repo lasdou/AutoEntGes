@@ -7,8 +7,6 @@ use AppBundle\Entity\Civilite;
 use AppBundle\Entity\Pays;
 use AppBundle\Entity\Ville;
 use AppBundle\Form\AdresseType;
-use AppBundle\Form\PaysType;
-use AppBundle\Form\VilleType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 class AdresseTypeTest extends TypeTestCase

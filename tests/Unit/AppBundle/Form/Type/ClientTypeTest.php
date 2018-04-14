@@ -2,12 +2,8 @@
 // tests/AppBundle/Form/Type/TestedTypeTest.php
 namespace Tests\Unit\AppBundle\Form\Type;
 
-use AppBundle\Entity\Civilite;
 use AppBundle\Entity\Client;
-use AppBundle\Entity\Pays;
-use AppBundle\Form\CiviliteType;
 use AppBundle\Form\ClientType;
-use AppBundle\Form\PaysType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 class ClientTypeTest extends TypeTestCase

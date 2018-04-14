@@ -3,9 +3,7 @@
 namespace Tests\Unit\AppBundle\Form\Type;
 
 use AppBundle\Entity\Civilite;
-use AppBundle\Entity\Pays;
 use AppBundle\Form\CiviliteType;
-use AppBundle\Form\PaysType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 class CiviliteTypeTest extends TypeTestCase

@@ -4,7 +4,6 @@ namespace Tests\Unit\AppBundle\Form\Type;
 
 use AppBundle\Entity\Pays;
 use AppBundle\Entity\Ville;
-use AppBundle\Form\PaysType;
 use AppBundle\Form\VilleType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
