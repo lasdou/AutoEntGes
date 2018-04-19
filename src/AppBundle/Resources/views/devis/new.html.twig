@@ -1,17 +1,14 @@
-{% extends 'base.html.twig' %}
+<div class="modal-header">
+    <h5 class="modal-title" id="remoteModalTitle">Création devis</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+</div>
 
-{% block body %}
-    <h1>Devi creation</h1>
-
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" class="btn btn-primary" value="Créer" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('devis_index') }}">Retour à la liste</a>
-        </li>
-    </ul>
-{% endblock %}
+<div class="modal-body">
+    Le devis à été créé,  <a class="btn btn-primary" href="{{ path('devis_show', {'id': devis.id}) }}">cliquez ici</a> pour afficher le devis.
+</div>
+<div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+    <a class="btn btn-primary" href="{{ path('devis_show', {'id': devis.id}) }}">Afficher le Devis</a>
+</div>

@@ -42,20 +42,12 @@ class DevisController extends Controller
     {
         $devis = new Devis();
         $devis->setClient($client);
-        $form = $this->createForm('AppBundle\Form\DevisType', $devis);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($devis);
-            $em->flush();
-
-            return $this->redirectToRoute('devis_show', array('id' => $devis->getId()));
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($devis);
+        $em->flush();
 
         return $this->render('AppBundle:devis:new.html.twig', array(
-            'devi' => $devis,
-            'form' => $form->createView(),
+            'devis' => $devis,
         ));
     }
 
