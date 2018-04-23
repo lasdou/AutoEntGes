@@ -3,7 +3,7 @@ checks:
         code_rating: true
         duplication: true
 filter:
-    excluded_paths: [vendor/*, var/*,  app/*, bin/*, tests/*]
+    excluded_paths: [vendor/*, var/*,  app/*, bin/*, tests/*, web/*]
 before_commands:
     - 'composer install --dev --prefer-source'
 tools:
@@ -15,7 +15,7 @@ tools:
     php_pdepend: true
     php_loc:
         enabled: true
-        excluded_dirs: [vendor, var, app, bin, tests]
+        excluded_dirs: [vendor, var, app, bin, tests, web]
     php_cpd:
         enabled: true
-        excluded_dirs: [vendor, var, app, bin, tests]
+        excluded_dirs: [vendor, var, app, bin, tests, web]
