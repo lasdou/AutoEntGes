@@ -3,6 +3,11 @@ build:
         php:
             version: 7.1             
     tests:
+        before:
+            - 'composer install --dev --prefer-source'
+            - cp app/config/parameters.yml.dist app/config/parameters.yml
+            - php bin/console doctrine:database:create --env=test
+            - php bin/console doctrine:migration:migrate --no-interaction --env=test
         override:
             -
                 command: 'vendor/bin/phpunit --coverage-clover=clover-file'
