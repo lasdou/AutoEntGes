@@ -20,6 +20,7 @@ matrix:
   include:
     - php: 5.6
     - php: 7.0
+    - php: 7.1
     - php: hhvm
   allow_failures:
     - php: hhvm
@@ -43,8 +44,7 @@ install:
 # Run script
 script:
 #  - phpunit
- - ./vendor/bin/phpunit -c /home/travis/build/lasdou/AutoEntGes/phpunit.xml --testsuite AutoEntGesTestUnit
- - ./vendor/bin/phpunit -c /home/travis/build/lasdou/AutoEntGes/phpunit.xml --testsuite AutoEntGesTestFunctionnal
+ - ./vendor/bin/phpunit -c /home/travis/build/lasdou/AutoEntGes/phpunit.xml
 
 
 # After a build, send email notification with the build results

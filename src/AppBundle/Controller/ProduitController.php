@@ -48,7 +48,9 @@ class ProduitController extends Controller
             $em->persist($produit);
             $em->flush();
 
-            return $this->redirectToRoute('produit_show', array('id' => $produit->getId()));
+            return $this->render('AppBundle:messages:popin_success.html.twig', array(
+                'message' => 'Produit ajouté avec succès',
+            ));
         }
 
         return $this->render('AppBundle:produit:new.html.twig', array(
