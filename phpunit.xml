@@ -10,7 +10,17 @@
         <server name="KERNEL_DIR" value="app/" />
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
     </php>
-  
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">/src</directory>
+      <exclude>
+        <directory suffix=".php">/app</directory>
+        <directory suffix=".php">/var</directory>
+        <directory suffix=".php">/vendor</directory>
+        <directory suffix=".php">/web</directory>
+      </exclude>
+    </whitelist>
+  </filter>  
   <testsuites>
       <testsuite name="AutoEntGesTestFunctionnal">
           <directory>tests/Functionnal/AppBundle/*/</directory>
