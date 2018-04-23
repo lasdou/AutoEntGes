@@ -2,6 +2,8 @@ AutoEntGes
 ========================
 
 [![Build Status](https://travis-ci.org/lasdou/AutoEntGes.svg?branch=develop)](https://travis-ci.org/lasdou/AutoEntGes)
+[![Code Coverage](https://scrutinizer-ci.com/g/lasdou/AutoEntGes/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/basvandorst/StravaPHP/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lasdou/AutoEntGes/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/basvandorst/StravaPHP/?branch=master)
 
 qu'est ce que c'est ?
 --------------
