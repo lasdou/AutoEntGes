@@ -19,7 +19,7 @@ assetic:
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/datatables/jquery.dataTables.js"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/datatables/dataTables.bootstrap4.js"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin.min.js"
-                - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin-datatables.min.js"
+                #- "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin-datatables.min.js"
                 #- "%kernel.root_dir%/../vendor/twbstheme/sbadmin/js/sb-admin-charts.min.js"
         css_admin:
             inputs:
