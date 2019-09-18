@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52738b38162a2c2accb690ecd25bc71e",
+    "content-hash": "1062750f1cab081cbc1545a8b357e7b4",
     "packages": [
         {
             "name": "components/font-awesome",
@@ -2816,10 +2816,10 @@
         },
         {
             "name": "twbstheme/sbadmin",
-            "version": "1.4",
+            "version": "5.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/BlackrockDigital/startbootstrap-sb-admin/archive/v1.0.3.zip"
+                "url": "https://github.com/BlackrockDigital/startbootstrap-sb-admin/archive/v5.0.0.zip"
             },
             "type": "component"
         },
@@ -3639,6 +3639,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2017-06-30T09:13:00+00:00"
         },
         {

@@ -9,9 +9,9 @@
             "package": {
                 "name": "twbstheme/sbadmin",
                 "type": "component",
-                "version": "1.4",
+                "version": "5.0.0",
                 "dist": {
-                    "url": "https://github.com/BlackrockDigital/startbootstrap-sb-admin/archive/v1.0.3.zip",
+                    "url": "https://github.com/BlackrockDigital/startbootstrap-sb-admin/archive/v5.0.0.zip",
                     "type": "zip"
                 }
             }
@@ -44,7 +44,7 @@
         "symfony/swiftmailer-bundle": "^2.6.4",
         "symfony/symfony": "3.4.*",
         "twbs/bootstrap": "^4.0",
-        "twbstheme/sbadmin": "^1.4",
+        "twbstheme/sbadmin": "^5.0",
         "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
