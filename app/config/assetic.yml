@@ -28,7 +28,7 @@ assetic:
                 # FontAwesome
                 - "%kernel.root_dir%/../vendor/components/font-awesome/css/all.min.css"
                 # Thème d'admin et ses dépendances
-                - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/datatables/dataTables.bootstrap4.css"
+                - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/vendor/datatables/dataTables.bootstrap4.min.css"
                 - "%kernel.root_dir%/../vendor/twbstheme/sbadmin/css/sb-admin.css"
                 # Nos CSS à nous
                 - "@AppBundle/Resources/css/*"
