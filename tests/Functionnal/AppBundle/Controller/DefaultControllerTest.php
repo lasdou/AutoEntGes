@@ -14,7 +14,7 @@ class DefaultControllerTest extends ParentController
 
         $this->assertSame(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
 
-        $this->assertContains('Home page', $crawler->filter('h1')->text());
+        $this->assertStringContainsString('Home page', $crawler->filter('h1')->text());
     }
 
     public function testLoginForm()
@@ -22,7 +22,7 @@ class DefaultControllerTest extends ParentController
         $crawler = $this->client->request('GET', '/');
 
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
-        $this->assertContains('Identification', $crawler->filter('div.card-header')->text());
+        $this->assertStringContainsString('Identification', $crawler->filter('div.card-header')->text());
 
     }
 

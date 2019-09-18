@@ -15,12 +15,13 @@ class ParentController extends WebTestCase
      */
     protected $client = null;
 
-    public function setUp()
+    public function setUp():void
     {
         $this->client = static::createClient();
 
         $this->client->followRedirects(true);
     }
+
 
     protected function logIn()
     {

@@ -11,7 +11,7 @@
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
     </php>
   <filter>
-    <whitelist processUncoveredFilesFromWhitelist="true">
+    <whitelist processUncoveredFilesFromWhitelist="true" addUncoveredFilesFromWhitelist="true">
       <directory suffix=".php">./src</directory>
       <exclude>
         <directory suffix=".php">./app</directory>
@@ -29,13 +29,6 @@
           <directory>tests/Unit/AppBundle/*/</directory>
       </testsuite>
   </testsuites>
-
-    <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true">
-            <!-- this is the path of the files included in your clover report -->
-            <directory suffix=".php">./src</directory>
-        </whitelist>
-    </filter>
     <logging>
         <!-- and this is where your report will be written -->
         <log type="coverage-html" target="./web/clover.html"/>
