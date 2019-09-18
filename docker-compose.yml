@@ -1,0 +1,43 @@
+version: '3.2'
+services:
+  web:
+    image: webdevops/php-apache-dev:7.3
+    environment:
+    - XDEBUG_REMOTE_PORT=9000
+    - XDEBUG_REMOTE_HOST=host.docker.internal
+    - XDEBUG_REMOTE_CONNECT_BACK=0
+    - XDEBUG_REMOTE_AUTOSTART=1
+    - WEB_DOCUMENT_ROOT=/var/www/html
+    - php.display_errors=1
+    - php.error_reporting=E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+    links:
+      - db:db
+    networks:
+      - front
+  db:
+    image: mysql:5.7
+    volumes:
+      - .:/var/www/html
+      - ./data/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - mysql.lower_case_table_names=1
+    networks:
+      - front
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "82:80"
+    links:
+      - db:db
+    networks:
+      - front
+networks:
+  front:
+    driver: bridge
